@@ -1,0 +1,60 @@
+.Menu_className {
+  height: inherit;
+  margin: 0;
+  text-align: center;
+  @media screen and (max-width: 767px) {
+    text-align: left;
+  }
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    justify-content: flex-start;
+    margin-right: 30px;
+  }
+  @media screen and (min-width: 992px) and (max-width: 1100px) {
+    display: flex;
+    flex: 1 1;
+    justify-content: space-evenly;
+  }
+  li {
+    display: inline-block;
+    height: inherit;
+    &:nth-child(1) {
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        display: none;
+      }
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+        display: none;
+      }
+      @media screen and (min-width: 1200px) {
+        display: none;
+      }
+    }
+    &:nth-child(n + 4) {
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
+    }
+    a {
+      padding-left: 20px;
+      position: relative;
+      vertical-align: middle;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 600;
+      padding: 15px;
+      display: inline-block;
+      & > em {
+        position: absolute;
+        top: 10px;
+        right: -5px;
+        pointer-events: none;
+        font-style: normal;
+      }
+      & > span {
+        position: absolute;
+        top: 10px;
+        right: -7px;
+        pointer-events: none;
+      }
+    }
+  }
+}
