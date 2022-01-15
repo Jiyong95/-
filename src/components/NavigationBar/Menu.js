@@ -55,7 +55,7 @@ export default function Menu() {
   return (
     <ul className="Menu_className">
       {menuData.map(({ name, text, newFlag, betaFlag }) => (
-        <li data-attribute-id="gnb" data-gnb-kind={name}>
+        <li data-attribute-id="gnb" data-gnb-kind={name} key={name}>
           <a href="/">
             {text}
             {newFlag === 1 && (
