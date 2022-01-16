@@ -2,6 +2,7 @@ import React from "react";
 import "../../scss/NavigationBar/NavigationBar.scss";
 import NavigationTop from "./NavigationTop";
 import Menu from "./Menu";
+import Aside from "./Aside";
 
 export default function NavigationBar() {
   return (
@@ -10,6 +11,7 @@ export default function NavigationBar() {
         <div className="MainBar_nav">
           <NavigationTop />
           <Menu />
+          <Aside />
         </div>
       </div>
     </div>

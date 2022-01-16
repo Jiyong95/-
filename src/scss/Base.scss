@@ -8,8 +8,13 @@ ul {
   list-style: none;
 }
 a {
-  text-decoration: none;
+  text-decoration: inherit;
+  cursor: pointer;
   color: #444444;
+  &:hover {
+    color: #444444;
+    text-decoration: none;
+  }
 }
 button {
   background: none;
