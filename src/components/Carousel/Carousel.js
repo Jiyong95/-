@@ -22,25 +22,51 @@ export default function Carousel() {
     slideRef.current.style.transition = "all 0.5s ease-in-out";
     slideRef.current.style.transform = `${
       innerWidth < 1200
-        ? `translate3d(-${(innerWidth - 80) * (currentSlide + 1)}px, 0px, 0px)`
-        : `translate3d(-${1060 * (currentSlide + 1)}px, 0px, 0px)`
+        ? `translate3d(-${(innerWidth - 80) * currentSlide}px, 0px, 0px)`
+        : `translate3d(-${
+            1076 + 1084 * (currentSlide - 1) - (innerWidth - 1200) / 2
+          }px, 0px, 0px)`
     }`;
     return () => window.removeEventListener("resize", handleWidth);
   }, [currentSlide, innerWidth]);
 
   const nextSlide = useCallback(() => {
-    if (currentSlide >= totalSlide) {
-      setCurrentSlide(0);
-    } else setCurrentSlide(currentSlide + 1);
-  }, [currentSlide, totalSlide]);
+    if (currentSlide <= totalSlide - 2) {
+      setCurrentSlide(currentSlide + 1);
+    }
+    if (currentSlide === totalSlide - 2) {
+      setTimeout(() => {
+        slideRef.current.style.transition = "0ms";
+        slideRef.current.style.transform = `${
+          innerWidth < 1200
+            ? `translate3d(-${innerWidth - 80}px, 0px, 0px)`
+            : `translate3d(-${1076 - (innerWidth - 1200) / 2}px, 0px, 0px)`
+        }`;
+        setCurrentSlide(1);
+      }, 499);
+    }
+  }, [currentSlide, totalSlide, innerWidth]);
 
   const prevSlide = useCallback(() => {
-    if (currentSlide === 0) {
-      setCurrentSlide(totalSlide);
-    } else {
+    if (currentSlide >= 1) {
       setCurrentSlide(currentSlide - 1);
     }
-  }, [currentSlide, totalSlide]);
+    if (currentSlide === 1) {
+      setTimeout(() => {
+        slideRef.current.style.transition = "0ms";
+        slideRef.current.style.transform = `${
+          innerWidth < 1200
+            ? `translate3d(-${
+                (innerWidth - 80) * (totalSlide - 2)
+              }px, 0px, 0px)`
+            : `translate3d(-${
+                1076 + 1084 * (totalSlide - 3) - (innerWidth - 1200) / 2
+              }px, 0px, 0px)`
+        }`;
+        setCurrentSlide(totalSlide - 2);
+      }, 499);
+    }
+  }, [currentSlide, totalSlide, innerWidth]);
 
   return (
     <main className="Main">
