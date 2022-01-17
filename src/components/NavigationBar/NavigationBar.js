@@ -6,14 +6,17 @@ import Aside from "./Aside";
 
 export default function NavigationBar() {
   return (
-    <div className="NavBar">
-      <div className="MainBar">
-        <div className="MainBar_nav">
-          <NavigationTop />
-          <Menu />
-          <Aside />
+    <>
+      <div className="NavBar">
+        <div className="MainBar">
+          <div className="MainBar_nav">
+            <NavigationTop />
+            <Menu />
+            <Aside />
+          </div>
         </div>
       </div>
-    </div>
+      <div className="padding"></div>
+    </>
   );
 }
