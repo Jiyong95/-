@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react/cjs/react.development";
+import React, { useEffect } from "react";
 import "../../scss/Carousel/Slide.scss";
 
 export default function Slide({
@@ -11,7 +10,7 @@ export default function Slide({
     const bannerList = document.querySelectorAll(".image");
     bannerList.forEach((e) => (e.style.filter = "brightness(50%)"));
     bannerList[currentSlide].style.filter = "brightness(100%)";
-  }, [currentSlide]);
+  });
   return (
     <div
       className="slide"
