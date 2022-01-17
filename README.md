@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# 원티드 프리온보딩 코스
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 배포
 
-## Available Scripts
+Netlify : https://wanted-pre-onboarding-jiyong.netlify.app/
+<br/><br/>
 
-In the project directory, you can run:
+## 디렉토리 구조
 
-### `npm start`
+```
+.
+└── src
+      ├── components
+      │   ├── Carousel
+      │   │   ├── BannerData.js     : 배너 데이터
+      │   │   ├── Carousel.js       : Carousel 컴포넌트
+      │   │   └── Slide.js          : Slide 컴포넌트
+      │   └── NavigationBar
+      │       ├── Aside.js          : Aside 컴포넌트
+      │       ├── Menu.js           : Menu 버튼 컴포넌트
+      │       ├── MenuData.js       : Menu 버튼 데이터
+      │       ├── NavigationBar.js  : Navigation 컴포넌트
+      │       └── NavigationTop.js  : NavigationTop 컴포넌트
+      ├── images : 배너 사진 폴더
+      │   ├── banner01.jpeg
+      │   ├── banner02.jpeg
+      │   ├── banner03.jpeg
+      │   ├── banner04.jpeg
+      │   ├── banner05.jpeg
+      │   ├── banner06.jpeg
+      │   ├── banner07.jpeg
+      │   ├── banner08.jpeg
+      │   └── banner09.jpeg
+      └── scss
+          ├── Base.scss : 기본 scss
+          ├── Carousel  : Carousel 컴포넌트 scss
+          │   ├── Carousel.scss
+          │   └── Slide.scss
+          └── NavigationBar : NavigationBar 컴포넌트 scss
+              ├── Aside.scss
+              ├── Menu.scss
+              ├── NavigationBar.scss
+              └── NavigationTop.scss
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🎯 요구 사항
 
-### `npm test`
+#### 1. **상단 GNB(Global Navigation Bar)**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 마크업 작업(HTML, CSS)만 작업해주세요.
+- 메뉴클릭, hover 등의 이벤트는 구현하지 않아도 됩니다.
 
-### `npm run build`
+#### 2. 슬라이드(또는 캐러샐이라고 불림) 영역
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 원티드 사이트와 똑같이 구현해주세요. (기능 구현 부족 시 감점)
+  - 스와이프 이벤트, 왼/오 버튼 클릭 이벤트 → 카드 이동
+- 슬라이드 구현을 위한 라이브러리는 사용하실 수 없습니다. (라이브러리 사용 시 감점)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### 3. **반응형(Responsive Web) 구현**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- GNB, 슬라이드 모두 반응형(Responsive Web)을 구현해주세요. (반응형 부족할 경우 감점)
 
-### `npm run eject`
+#### 4. **Github Repository 주소와 배포 링크를 제출해주세요.**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- netlify로 배포하고, Github Read.me에 배포 링크를 작성해주세요. (배포가 안 된 경우 감점)
