@@ -1,0 +1,181 @@
+.slide {
+  width: 1060px;
+  position: relative;
+  display: block;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  @media screen and (min-width: 1200px) {
+    padding: 0 12px;
+    box-sizing: content-box;
+  }
+  & > div {
+    margin: 20px 10px;
+    @media screen and (min-width: 1200px) {
+      margin: 0;
+    }
+    div {
+      width: 100%;
+      display: inline-block;
+      .image {
+        filter: brightness(50%);
+        @media screen and(max-width:767px) {
+          height: 183px;
+          border-radius: 3px 3px 0 0;
+        }
+        @media screen and (min-width: 768px) and(max-width:991px) {
+          height: 183px;
+          border-radius: 3px 3px 0 0;
+        }
+        @media screen and (min-width: 992px) and(max-width:1199px) {
+          height: 183px;
+          border-radius: 3px 3px 0 0;
+        }
+        a {
+          @media screen and(max-width:1199px) {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            height: 100%;
+          }
+          img {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            object-fit: cover;
+          }
+        }
+      }
+      .slideInfo {
+        text-align: center;
+        @media screen and (min-width: 1200px) {
+          position: absolute;
+          bottom: 28px;
+          width: 330px;
+          height: 146px;
+          border-radius: 4px;
+          background-color: #fff;
+          text-align: left;
+          left: 34px;
+        }
+        h2 {
+          margin-top: 20px;
+          font-size: 18px;
+          line-height: 1;
+          font-weight: 700;
+          color: #333;
+          width: "auto";
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          @media screen and (min-width: 1200px) {
+            margin-left: 20px;
+            margin-right: 20px;
+            font-size: 20px;
+            line-height: 1.5;
+          }
+        }
+        h3 {
+          margin-top: 6px;
+          font-size: 13px;
+          font-weight: 500;
+          line-height: 1.15;
+          color: #666;
+          width: "auto";
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          @media screen and (min-width: 1200px) {
+            margin: 0 20px;
+            height: 44px;
+            font-size: 14px;
+            line-height: 1.64;
+            color: #333;
+          }
+        }
+        hr {
+          display: none;
+          height: 1px;
+          margin: 0;
+          border: none;
+          -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+          flex-shrink: 0;
+          background-color: #ececec;
+          @media screen and (min-width: 1200px) {
+            display: block;
+          }
+        }
+        a {
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 1;
+          color: #36f;
+          height: 40px;
+          padding: 6px 8px;
+          position: relative;
+          display: -webkit-inline-flex;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          justify-content: center;
+          vertical-align: middle;
+          min-width: 64px;
+          box-sizing: border-box;
+          border-radius: 25px;
+          @media screen and (min-width: 1200px) {
+            margin: 6px 0 0 13px;
+          }
+          .button-label {
+            width: 100%;
+            font-size: inherit;
+            font-weight: inherit;
+            display: inherit;
+            -webkit-align-items: inherit;
+            -ms-flex-align: inherit;
+            align-items: inherit;
+            -webkit-justify-content: inherit;
+            -ms-flex-pack: inherit;
+            justify-content: inherit;
+            color: inherit;
+            .button-endIcon {
+              margin-right: -1px;
+              margin-left: 2px;
+              .endIcon {
+                width: 100%;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-align-items: inherit;
+                -ms-flex-align: inherit;
+                align-items: inherit;
+                -webkit-justify-content: inherit;
+                -ms-flex-pack: inherit;
+                justify-content: inherit;
+                svg {
+                  -webkit-user-select: none;
+                  -ms-user-select: none;
+                  user-select: none;
+                  width: 1em;
+                  height: 1em;
+                  display: inline-block;
+                  fill: currentColor;
+                  -webkit-flex-shrink: 0;
+                  -ms-flex-negative: 0;
+                  flex-shrink: 0;
+                  font-size: inherit;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
