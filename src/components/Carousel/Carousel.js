@@ -13,6 +13,7 @@ export default function Carousel() {
   };
 
   useEffect(() => {
+    const timer = setTimeout(nextSlide, 5000);
     window.addEventListener("resize", handleWidth);
     slideRef.current.style.width = `${
       innerWidth < 1200
@@ -27,7 +28,10 @@ export default function Carousel() {
             1076 + 1084 * (currentSlide - 1) - (innerWidth - 1200) / 2
           }px, 0px, 0px)`
     }`;
-    return () => window.removeEventListener("resize", handleWidth);
+    return () => {
+      window.removeEventListener("resize", handleWidth);
+      clearInterval(timer);
+    };
   }, [currentSlide, innerWidth]);
 
   const nextSlide = useCallback(() => {
