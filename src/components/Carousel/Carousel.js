@@ -11,29 +11,6 @@ export default function Carousel() {
   const handleWidth = (event) => {
     setInnerWidth(event.target.innerWidth);
   };
-
-  useEffect(() => {
-    const timer = setTimeout(nextSlide, 5000);
-    window.addEventListener("resize", handleWidth);
-    slideRef.current.style.width = `${
-      innerWidth < 1200
-        ? `${(innerWidth - 80) * 20}px`
-        : `${29700 + (innerWidth - 1200) * 27}px`
-    }`;
-    slideRef.current.style.transition = "all 0.5s ease-in-out";
-    slideRef.current.style.transform = `${
-      innerWidth < 1200
-        ? `translate3d(-${(innerWidth - 80) * currentSlide}px, 0px, 0px)`
-        : `translate3d(-${
-            1076 + 1084 * (currentSlide - 1) - (innerWidth - 1200) / 2
-          }px, 0px, 0px)`
-    }`;
-    return () => {
-      window.removeEventListener("resize", handleWidth);
-      clearInterval(timer);
-    };
-  }, [currentSlide, innerWidth]);
-
   const nextSlide = useCallback(() => {
     if (currentSlide <= totalSlide - 2) {
       setCurrentSlide(currentSlide + 1);
@@ -71,6 +48,28 @@ export default function Carousel() {
       }, 499);
     }
   }, [currentSlide, totalSlide, innerWidth]);
+
+  useEffect(() => {
+    const timer = setTimeout(nextSlide, 5000);
+    window.addEventListener("resize", handleWidth);
+    slideRef.current.style.width = `${
+      innerWidth < 1200
+        ? `${(innerWidth - 80) * 20}px`
+        : `${29700 + (innerWidth - 1200) * 27}px`
+    }`;
+    slideRef.current.style.transition = "all 0.5s ease-in-out";
+    slideRef.current.style.transform = `${
+      innerWidth < 1200
+        ? `translate3d(-${(innerWidth - 80) * currentSlide}px, 0px, 0px)`
+        : `translate3d(-${
+            1076 + 1084 * (currentSlide - 1) - (innerWidth - 1200) / 2
+          }px, 0px, 0px)`
+    }`;
+    return () => {
+      window.removeEventListener("resize", handleWidth);
+      clearInterval(timer);
+    };
+  }, [currentSlide, innerWidth, nextSlide]);
 
   return (
     <main className="Main">
