@@ -1,3 +1,4 @@
+import "./scss/Base.scss";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 
 function App() {
