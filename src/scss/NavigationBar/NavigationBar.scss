@@ -39,4 +39,7 @@
 
 .padding {
   height: 50px;
+  @media screen and (max-width: 991px) {
+    height: 110px;
+  }
 }
