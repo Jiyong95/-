@@ -11,8 +11,9 @@ export default function Carousel() {
   const handleWidth = (event) => {
     setInnerWidth(event.target.innerWidth);
   };
+
   const nextSlide = useCallback(() => {
-    if (currentSlide <= totalSlide - 2) {
+    if (currentSlide < totalSlide - 2) {
       setCurrentSlide(currentSlide + 1);
     }
     if (currentSlide === totalSlide - 2) {
@@ -24,12 +25,12 @@ export default function Carousel() {
             : `translate3d(-${1076 - (innerWidth - 1200) / 2}px, 0px, 0px)`
         }`;
         setCurrentSlide(1);
-      }, 499);
+      }, 500);
     }
   }, [currentSlide, totalSlide, innerWidth]);
 
   const prevSlide = useCallback(() => {
-    if (currentSlide >= 1) {
+    if (currentSlide > 1) {
       setCurrentSlide(currentSlide - 1);
     }
     if (currentSlide === 1) {
@@ -45,7 +46,7 @@ export default function Carousel() {
               }px, 0px, 0px)`
         }`;
         setCurrentSlide(totalSlide - 2);
-      }, 499);
+      }, 500);
     }
   }, [currentSlide, totalSlide, innerWidth]);
 

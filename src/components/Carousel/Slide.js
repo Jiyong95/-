@@ -11,6 +11,7 @@ export default function Slide({
     bannerList.forEach((e) => (e.style.filter = "brightness(50%)"));
     bannerList[currentSlide].style.filter = "brightness(100%)";
   });
+
   return (
     <div
       className="slide"
