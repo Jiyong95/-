@@ -66,16 +66,3 @@ Netlify : https://wanted-pre-onboarding-jiyong.netlify.app/
 
 - netlify로 배포하고, Github Read.me에 배포 링크를 작성해주세요. (배포가 안 된 경우 감점)
   <br/><br/>
-
-## 🛠 구현 기능 목록
-
-#### 1. 상단 GNB ✅
-
-#### 2. 캐러샐 ✅
-
-- Infinite Slide
-- Random Banner Show
-
-#### 3. 반응형 ✅
-
-#### 4. netlify 배포 ✅
