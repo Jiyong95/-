@@ -13,7 +13,8 @@ export default function Carousel() {
   };
 
   const nextSlide = useCallback(() => {
-    if (currentSlide < totalSlide - 2) {
+    if (currentSlide <= totalSlide - 2) {
+      slideRef.current.style.transition = "all 0.5s ease-in-out";
       setCurrentSlide(currentSlide + 1);
     }
     if (currentSlide === totalSlide - 2) {
@@ -30,7 +31,8 @@ export default function Carousel() {
   }, [currentSlide, totalSlide, innerWidth]);
 
   const prevSlide = useCallback(() => {
-    if (currentSlide > 1) {
+    if (currentSlide >= 1) {
+      slideRef.current.style.transition = "all 0.5s ease-in-out";
       setCurrentSlide(currentSlide - 1);
     }
     if (currentSlide === 1) {
@@ -58,7 +60,6 @@ export default function Carousel() {
         ? `${(innerWidth - 80) * 20}px`
         : `${29700 + (innerWidth - 1200) * 27}px`
     }`;
-    slideRef.current.style.transition = "all 0.5s ease-in-out";
     slideRef.current.style.transform = `${
       innerWidth < 1200
         ? `translate3d(-${(innerWidth - 80) * currentSlide}px, 0px, 0px)`
