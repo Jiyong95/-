@@ -4,7 +4,9 @@ import Slide from "./Slide";
 import slideData from "./BannerData";
 
 export default function Carousel() {
-  const [currentSlide, setCurrentSlide] = useState(1);
+  const [currentSlide, setCurrentSlide] = useState(
+    Math.floor(Math.random() * 9) + 1
+  );
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   const slideRef = useRef(null);
   const totalSlide = slideData.length;
