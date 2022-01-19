@@ -8,12 +8,15 @@ export default function Carousel() {
     Math.floor(Math.random() * 9) + 1
   );
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+  const [touchPoint, setTouchPoint] = useState(0);
   const slideRef = useRef(null);
   const totalSlide = slideData.length;
   const handleWidth = (event) => {
     setInnerWidth(event.target.innerWidth);
   };
-
+  const handleTouch = (event) => {
+    setTouchPoint(event.touches[0].pageX);
+  };
   const nextSlide = useCallback(() => {
     if (currentSlide <= totalSlide - 2) {
       slideRef.current.style.transition = "all 0.5s ease-in-out";
@@ -54,9 +57,25 @@ export default function Carousel() {
     }
   }, [currentSlide, totalSlide, innerWidth]);
 
+  const handleSwipe = useCallback(
+    (event) => {
+      const endTouch = event.changedTouches[0].pageX;
+      if (touchPoint === 0 || touchPoint > endTouch) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+      setTouchPoint(0);
+    },
+    [nextSlide, prevSlide, touchPoint]
+  );
+
   useEffect(() => {
     const timer = setTimeout(nextSlide, 5000);
     window.addEventListener("resize", handleWidth);
+    const slideEl = slideRef.current;
+    slideEl.addEventListener("touchstart", handleTouch);
+    slideEl.addEventListener("touchend", handleSwipe);
     slideRef.current.style.width = `${
       innerWidth < 1200
         ? `${(innerWidth - 80) * 20}px`
@@ -71,9 +90,11 @@ export default function Carousel() {
     }`;
     return () => {
       window.removeEventListener("resize", handleWidth);
+      slideEl.removeEventListener("touchstart", handleTouch);
+      slideEl.removeEventListener("touchend", handleSwipe);
       clearInterval(timer);
     };
-  }, [currentSlide, innerWidth, nextSlide]);
+  }, [currentSlide, innerWidth, nextSlide, handleSwipe]);
 
   return (
     <main className="Main">
